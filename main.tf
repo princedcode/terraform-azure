@@ -17,3 +17,8 @@ resource "azurerm_storage_container" "container" {
   container_access_type = "private"
 }
 
+resource "azurerm_storage_share" "fileshare" {
+  name                 = "testfileshare"
+  storage_account_name = azurerm_storage_account.storage.name
+  quota                = 1
+}
